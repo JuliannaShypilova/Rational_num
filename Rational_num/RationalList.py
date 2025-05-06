@@ -43,7 +43,7 @@ class RationalList:
         return "[" + ", ".join(str(r) for r in self.data) + "]"
 
     def sort(self):
-        self.data.sort(key=lambda r: r())  # Використовуємо виклик __call__ для числового значення
+        self.data.sort(key=lambda r: r())
 
     def __iter__(self):
         return iter(self.data)
@@ -61,7 +61,7 @@ if __name__ == "__main__":
 
     with open("test_files/output.txt", "w") as output_file:
         for filename in input_files:
-            operation = '-'  # Операція за замовчуванням
+            operation = '-'
             with open(filename, "r") as f:
                 for line in f.readlines():
                     data = line.split()
